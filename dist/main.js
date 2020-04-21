@@ -168,51 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/styles/scss.scss */ "./styles/scss.scss");
 /* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _models_Post_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/models/Post.js */ "./models/Post.js");
-
-
-
-var post = new _models_Post_js__WEBPACK_IMPORTED_MODULE_2__["default"]('Заголовок 1');
-console.log('post to string: ' + post.toString());
-
-/***/ }),
-
-/***/ "./models/Post.js":
-/*!************************!*\
-  !*** ./models/Post.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Post = /*#__PURE__*/function () {
-  function Post(title) {
-    _classCallCheck(this, Post);
-
-    this.title = title;
-    this.date = new Date();
-  }
-
-  _createClass(Post, [{
-    key: "toString",
-    value: function toString() {
-      return JSON.stringify({
-        title: this.title,
-        date: this.date.toJSON()
-      });
-    }
-  }]);
-
-  return Post;
-}();
 
 
 

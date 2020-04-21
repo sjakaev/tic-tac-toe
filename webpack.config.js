@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TersrerWebpackPlugin = require('terser-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -87,7 +88,8 @@ const plugins = () => {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css')
-    })
+    }),
+    new VueLoaderPlugin(),
   ]
 
   if (isProd) {
@@ -102,7 +104,6 @@ module.exports = {
     mode: 'development',
     entry: {
         main : ['@babel/polyfill', './index.js'],
-        analytics : './analytics.js',
     },
     output : {
         filename: filename('js'),
@@ -143,6 +144,10 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: jsLoaders()
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     }
